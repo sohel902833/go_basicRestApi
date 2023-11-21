@@ -1,7 +1,6 @@
 package config
 
 import (
-	"auth_fiber/models"
 	"fmt"
 	"os"
 
@@ -45,21 +44,21 @@ func Connect() *gorm.DB {
 	DB=db;
 	fmt.Println("Db connected...")
 
-	AutoMigrate(db)
+	// AutoMigrate(db)
 
 	return db;
 }
 
 
 
-func AutoMigrate(connection *gorm.DB){
-	 connection.Debug().AutoMigrate(
-		&models.Cashier{},
-		&models.Category{},
-		&models.Payment{},
-		&models.PaymentType{},
-		&models.Product{},
-		&models.Discount{},
-		&models.Order{},
-	 )
-}
+// func AutoMigrate(connection *gorm.DB){
+// 	 connection.Debug().AutoMigrate(
+// 		&models.Cashier{},
+// 		&models.Category{},
+// 		&models.Payment{},
+// 		&models.PaymentType{},
+// 		&models.Product{},
+// 		&models.Discount{},
+// 		&models.Order{},
+// 	 )
+// }

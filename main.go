@@ -12,7 +12,9 @@ import (
 func main()  {
 	db.Connect();
 	db.MongoConnection();
-	app :=fiber.New();
+	app :=fiber.New(fiber.Config{
+		BodyLimit: 10*1024*1024,
+	});
 	app.Get("/",func(c *fiber.Ctx) error {
 		return c.SendString("Hello World!");
 	})
